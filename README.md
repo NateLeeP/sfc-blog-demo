@@ -1,4 +1,4 @@
-# frontend
+# SFC Blog Post project
 
 ## Project setup
 ```
