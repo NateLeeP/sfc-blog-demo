@@ -2,7 +2,8 @@
     <div class="to-do-container">
         <input v-model="toDoText" />
         <button @click="addTodo">Add To List</button>
-        <ToDo v-for="todo in toDos" @toggle-to-do="handleComplete" :toDo="todo" :key="todo.text" />
+        <ToDo v-for="todo in toDos" @toggle-to-do="(toDo) => toDo.complete = !toDo.complete" :toDo="todo"
+            :key="todo.text" />
     </div>
 
 </template>
@@ -28,9 +29,6 @@ export default {
                 text: this.toDoText,
                 complete: false
             })
-        },
-        handleComplete(toDo) {
-            toDo.complete = !toDo.complete
         }
     }
 }
